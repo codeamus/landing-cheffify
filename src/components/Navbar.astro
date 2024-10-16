@@ -1,0 +1,16 @@
+---
+import Logo from "@/assets/images/logos/logo.svg";
+import { Image } from "astro:assets";
+---
+
+<nav class="bg-primary px-40 py-5 flex justify-between items-center">
+  <a href="/">
+    <Image src={Logo} alt="Logo de cheffify" class="size-30" />
+  </a>
+  <ul class="flex gap-4">
+    <li><a href="http://" class="text-white text-lg">Home</a></li>
+    <li><a href="http://" class="text-white text-lg">Nuestros Platos</a></li>
+    <li><a href="http://" class="text-white text-lg">Quienes somos</a></li>
+    <li><a href="http://" class="text-white text-lg">Cotizar aquí</a></li>
+  </ul>
+</nav>
