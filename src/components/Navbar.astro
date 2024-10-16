@@ -1,16 +1,58 @@
 ---
 import Logo from "@/assets/images/logos/logo.svg";
 import { Image } from "astro:assets";
+import IconHome from "@/assets/images/icons/icon-home.svg";
+import IconStar from "@/assets/images/icons/icon-star.svg";
+import IconHearth from "@/assets/images/icons/icon-hearth.svg";
+import IconBell from "@/assets/images/icons/icon-bell.svg";
+
+const MENU_NAV = [
+  {
+    name: "Inicio",
+    link: "/",
+    icon: IconHome,
+  },
+  {
+    name: "Nuestros Platos",
+    link: "/nuestros-platos",
+    icon: IconStar,
+  },
+  {
+    name: "Quienes somos",
+    link: "/quienes-somos",
+    icon: IconHearth,
+  },
+];
 ---
 
-<nav class="bg-primary px-40 py-5 flex justify-between items-center">
+<nav class="bg-primary px-10 lg:px-40 py-5 flex justify-between items-center">
   <a href="/">
     <Image src={Logo} alt="Logo de cheffify" class="size-30" />
   </a>
-  <ul class="flex gap-4">
-    <li><a href="http://" class="text-white text-lg">Home</a></li>
-    <li><a href="http://" class="text-white text-lg">Nuestros Platos</a></li>
-    <li><a href="http://" class="text-white text-lg">Quienes somos</a></li>
-    <li><a href="http://" class="text-white text-lg">Cotizar aquí</a></li>
+  <ul class="flex gap-8 items-center">
+    {
+      MENU_NAV.map(({ name, link, icon }) => (
+        <li class="hidden lg:block">
+          <a href={link} class="flex justify-end items-end gap-2">
+            <Image src={icon} alt="Icono de inicio" class="size-4" />
+            <span class="text-white font-semibold text-sm leading-none">
+              {name}
+            </span>
+          </a>
+        </li>
+      ))
+    }
+    <li>
+      <!-- TODO: Agregar link de cotización -->
+      <a
+        href="#"
+        class="flex items-center justify-center gap-3 bg-secondary px-4 py-2 rounded-2xl transition duration-500 hover:bg-cheffify-aqua"
+      >
+        <Image src={IconBell} alt="Icono de campana" class="size-4" />
+        <span class="text-white font-semibold text-xs leading-none uppercase"
+          >Cotizar aquí</span
+        >
+      </a>
+    </li>
   </ul>
 </nav>
