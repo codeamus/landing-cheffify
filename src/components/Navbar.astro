@@ -1,26 +1,27 @@
 ---
 import Logo from "@/assets/images/logos/logo.svg";
 import { Image } from "astro:assets";
-import IconHome from "@/assets/images/icons/icon-home.svg";
-import IconStar from "@/assets/images/icons/icon-star.svg";
-import IconHearth from "@/assets/images/icons/icon-hearth.svg";
+
 import IconBell from "@/assets/images/icons/icon-bell.svg";
+import IconHome from "@/components/icons/Home.astro";
+import IconHearth from "@/components/icons/Hearth.astro";
+import IconStar from "@/components/icons/Star.astro";
 
 const MENU_NAV = [
   {
     name: "Inicio",
     link: "/",
-    icon: IconHome,
+    Icon: IconHome,
   },
   {
     name: "Nuestros Platos",
     link: "/nuestros-platos",
-    icon: IconStar,
+    Icon: IconHearth,
   },
   {
     name: "Quienes somos",
     link: "/quienes-somos",
-    icon: IconHearth,
+    Icon: IconStar,
   },
 ];
 
@@ -39,17 +40,12 @@ const currentPath = Astro.url.pathname;
   </a>
   <ul class="flex gap-8 items-center">
     {
-      MENU_NAV.map(({ name, link, icon }) => (
+      MENU_NAV.map(({ name, link, Icon }) => (
         <li class="hidden lg:block">
-          <a href={link} class="flex justify-end items-end gap-2">
-            <Image
-              src={icon}
-              alt="Icono de inicio"
-              class="size-4"
-              loading="eager"
-            />
+          <a href={link} class="flex justify-end items-end gap-2 group">
+            <Icon active={currentPath === link} />
             <span
-              class={`${currentPath === link ? "text-secondary" : "text-white"} font-semibold text-sm leading-none`}
+              class={`${currentPath === link ? "text-secondary" : "text-white"} font-semibold text-sm leading-none transition-all duration-500 group-hover:text-secondary`}
             >
               {name}
             </span>
