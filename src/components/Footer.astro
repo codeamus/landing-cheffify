@@ -1,3 +1,98 @@
-<footer>
-  <h2>Footer</h2>
+---
+import LogoFooter from "@/assets/images/logos/logo-color.svg";
+import InstaIcon from "@/assets/images/icons/icon-inst.svg";
+import MailIcon from "@/assets/images/icons/icon-mail.svg";
+import PhoneIcon from "@/assets/images/icons/icon-phone.svg";
+import { Image } from "astro:assets";
+import PDFPoliticas from "@/assets/docs/politicas-de-privacidad-cheffify.pdf";
+---
+
+<footer class="flex flex-col px-[20px] lg:px-[60px] xl:px-[170px] pb-10">
+  <div class="flex flex-col lg:flex-row justify-between items-center">
+    <a href="/" aria-label="Logo de cheffify que te lleva al home del sitio">
+      <Image
+        src={LogoFooter}
+        alt="Logo de cheffify ubicado en el footer"
+        class="size-24 hover:scale-110 transition-all duration-500"
+      />
+    </a>
+  </div>
+  <div
+    class="flex flex-col lg:flex-row gap-2 lg:gap-0 items-center justify-between border-t border-b border-t-separator border-grayLight py-10 my-3"
+  >
+    <p class="text-xs text-gray">
+      ©2023 cheffify · Todos los derechos reservados
+    </p>
+    <div class="flex items-center gap-4">
+      <p class="text-xs text-gray">Contacto y redes sociales:</p>
+      <ul class="flex items-center gap-2">
+        <li>
+          <a
+            href="https://www.instagram.com/cheffify_cl/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src={InstaIcon}
+              alt="Icono de instagram"
+              class="size-5 transition-all duration-500 hover:scale-110"
+            />
+          </a>
+        </li>
+        <li>
+          <a href="mailto:cheffify@gmail.com">
+            <Image
+              src={MailIcon}
+              alt="Icono de Email"
+              class="size-5 transition-all duration-500 hover:scale-110"
+            />
+          </a>
+        </li>
+        <li>
+          <a href="tel:+56944732293">
+            <Image
+              src={PhoneIcon}
+              alt="Icono de celular"
+              class="size-5 transition-all duration-500 hover:scale-110"
+            />
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div>
+    <p class="text-xs text-gray hidden lg:block">
+      <strong class="font-extrabold">Política de privacidad</strong>: nuestro
+      sitio web emplea la información con el fin de proporcionar el mejor
+      servicio posible, particularmente para mantener un registro de usuarios,
+      de pedidos en caso que aplique, y mejorar nuestros productos y servicios.
+      Es posible que sean enviados correos electrónicos periódicamente a través
+      de nuestro sitio con ofertas especiales, nuevos productos y otra
+      información publicitaria que consideremos relevante para usted o que pueda
+      brindarle algún beneficio, estos correos electrónicos serán enviados a la
+      dirección que usted proporcione y podrán ser cancelados en cualquier
+      momento.{" "}
+      <a
+        class="font-extrabold text-secondary transition-all duration-500 hover:text-green"
+        href={PDFPoliticas}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Seguir leyendo +
+      </a>
+    </p>
+    <p
+      class="text-xs text-gray lg:hidden flex items-center gap-[2px] justify-center"
+    >
+      <strong class="font-extrabold">Política de privacidad</strong>:
+      <a
+        class="font-extrabold text-secondary transition-all duration-500 hover:text-green"
+        href={PDFPoliticas}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Leer aquí
+      </a>
+    </p>
+  </div>
 </footer>
