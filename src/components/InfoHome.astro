@@ -47,7 +47,7 @@ const { icon, title, description, list, cover, isFrozt } =
                 src={LogoFrozt}
                 alt="Logo Frozt"
                 class="w-20 bottom-1 relative"
-                loading="eager"
+                loading="lazy"
               />
             </a>
           ) : (
@@ -66,7 +66,7 @@ const { icon, title, description, list, cover, isFrozt } =
         src={cover.src}
         alt="Imagen de cena con plato de cheffify"
         class="w-full max-w-sm rounded-lg hidden lg:block"
-        loading="eager"
+        loading={isFrozt ? "lazy" : "eager"}
       />
     </div>
   </article>
