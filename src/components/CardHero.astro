@@ -5,9 +5,10 @@ interface CardHeroProps {
   legalText: string;
   bgButton: string;
   typeFrozt: boolean;
+  link: string;
 }
 
-const { title, btnText, legalText, bgButton, typeFrozt } =
+const { title, btnText, legalText, bgButton, typeFrozt, link } =
   Astro.props as CardHeroProps;
 
 import LogoFrozt from "@/assets/images/logos/logo-frozt.svg";
@@ -25,9 +26,7 @@ const bgButtonClasses: { [key: string]: string } = {
   <h2 class="text-primary font-bold text-2xl mb-5">{title}</h2>
   <!-- TODO: Add link COTIZACIOn -->
   <a
-    href="http://"
-    target="_blank"
-    rel="noopener noreferrer"
+    href={link}
     class={`flex items-center gap-2 justify-center px-10 py-4 rounded-lg ${bgButtonClasses[bgButton] || ""} text-white font-bold transition-all duration-500 hover:bg-secondary`}
   >
     {btnText}
