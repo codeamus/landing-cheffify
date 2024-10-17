@@ -1,3 +1,51 @@
-<section>
-  <h2>Servicios para empresa</h2>
+---
+import IconCompany from "@/assets/images/icons/icon-company.svg";
+import ImageCover from "@/assets/images/img/image-dinner.webp";
+import { Image } from "astro:assets";
+
+const LIST = [
+  "Soluciones personalizadas de comida congelada.",
+  "Platos elaborados sin conservantes ni colorantes",
+  "Envíos a todo Chile.",
+  "Pedido mínimo mensual de 900.000 CLP.",
+];
+---
+
+<section class="mx-4 lg:mx-40 xl:mx-72 mt-16">
+  <article>
+    <Image src={IconCompany} alt="Icono de casa" class="size-20" />
+    <div class="flex gap-10">
+      <div class="flex flex-col lg:w-1/2">
+        <h2 class="text-primary text-3xl font-bold mt-2">
+          Servicios para Empresa
+        </h2>
+        <p class="text-pretty text-primary font-medium text-lg mt-6">
+          Somos proveedores de Restaurantes, Hoteles y Grandes Empresas con
+          platos artesanales congelados y 100% naturales. Solicita una
+          cotización y lleva la mejor calidad a tu negocio.
+        </p>
+        <h3 class="font-bold text-2xl text-primary mt-8">¿Qué ofrecemos?</h3>
+        <ul class="list-disc pl-4">
+          {
+            LIST.map((item) => (
+              <li class="text-primary font-bold mt-4">{item}</li>
+            ))
+          }
+        </ul>
+        <a
+          href="/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-2 justify-center px-10 py-4 rounded-lg text-white font-bold transition-all duration-500 hover:bg-secondary bg-cheffify-aqua mt-8 w-full lg:w-fit"
+        >
+          Solicitar COTIZACIÓN
+        </a>
+      </div>
+      <Image
+        src={ImageCover}
+        alt="Imagen de empresa"
+        class="w-full max-w-sm rounded-lg hidden lg:block"
+      />
+    </div>
+  </article>
 </section>
