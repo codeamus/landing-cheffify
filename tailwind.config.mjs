@@ -9,6 +9,9 @@ export default {
         "cheffify-orange": "#E27F3E",
         "cheffify-aqua": "#355E74",
       },
+      backgroundImage: {
+        "hero-pattern": "url(/hero-pattern.webp)",
+      },
     },
   },
   plugins: [],
