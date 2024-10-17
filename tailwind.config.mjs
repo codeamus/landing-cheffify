@@ -13,6 +13,7 @@ export default {
       },
       backgroundImage: {
         "hero-pattern": "url(/hero-pattern.webp)",
+        "shadow-item": "url(/bg-shadow.svg)",
       },
     },
   },
