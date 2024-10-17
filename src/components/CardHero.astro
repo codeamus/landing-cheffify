@@ -12,6 +12,11 @@ const { title, btnText, legalText, bgButton, typeFrozt } =
 
 import LogoFrozt from "@/assets/images/logos/logo-frozt.svg";
 import { Image } from "astro:assets";
+
+const bgButtonClasses: { [key: string]: string } = {
+  "cheffify-aqua": "bg-cheffify-aqua",
+  "cheffify-orange": "bg-cheffify-orange",
+};
 ---
 
 <div
@@ -23,7 +28,7 @@ import { Image } from "astro:assets";
     href="http://"
     target="_blank"
     rel="noopener noreferrer"
-    class={`flex items-center gap-2 justify-center px-10 py-4 rounded-lg bg-${bgButton} text-white font-bold transition-all duration-500 hover:bg-secondary`}
+    class={`flex items-center gap-2 justify-center px-10 py-4 rounded-lg ${bgButtonClasses[bgButton] || ""} text-white font-bold transition-all duration-500 hover:bg-secondary`}
   >
     {btnText}
 
