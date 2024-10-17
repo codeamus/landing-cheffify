@@ -31,6 +31,7 @@ const MENU_NAV = [
       src={Logo}
       alt="Logo de cheffify"
       class="size-30 transition-all duration-500 hover:scale-105"
+      loading="eager"
     />
   </a>
   <ul class="flex gap-8 items-center">
@@ -38,7 +39,12 @@ const MENU_NAV = [
       MENU_NAV.map(({ name, link, icon }) => (
         <li class="hidden lg:block">
           <a href={link} class="flex justify-end items-end gap-2">
-            <Image src={icon} alt="Icono de inicio" class="size-4" />
+            <Image
+              src={icon}
+              alt="Icono de inicio"
+              class="size-4"
+              loading="eager"
+            />
             <span class="text-white font-semibold text-sm leading-none">
               {name}
             </span>
@@ -49,10 +55,15 @@ const MENU_NAV = [
     <li>
       <!-- TODO: Agregar link de cotización -->
       <a
-        href="#"
+        href="/"
         class="flex items-center justify-center gap-3 bg-secondary px-4 py-2 rounded-2xl transition duration-500 hover:bg-cheffify-aqua"
       >
-        <Image src={IconBell} alt="Icono de campana" class="size-4" />
+        <Image
+          src={IconBell}
+          alt="Icono de campana"
+          class="size-4"
+          loading="eager"
+        />
         <span class="text-white font-semibold text-xs leading-none uppercase"
           >Cotizar aquí</span
         >
