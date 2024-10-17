@@ -22,7 +22,9 @@ import { Image } from "astro:assets";
   <main>
     <Navbar />
     <HeroBanner />
-    <section class="mx-4 lg:mx-40 xl:mx-72">
+    <section
+      class="px-4 lg:px-40 xl:px-72 bg-shadow-item bg-no-repeat bg-contain bg-bottom"
+    >
       <InfoHome
         icon={IconCompany}
         title="Servicios para Empresa"
@@ -51,7 +53,7 @@ import { Image } from "astro:assets";
       <Image
         src={ImageComeComoCasa}
         alt="Come como en casa"
-        class="w-80 mx-auto my-20"
+        class="w-80 mx-auto py-20"
         loading="lazy"
       />
     </section>
