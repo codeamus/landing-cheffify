@@ -1,0 +1,23 @@
+---
+interface HearthProps {
+  active: boolean;
+}
+
+const { active } = Astro.props as HearthProps;
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  version="1.1"
+  viewBox="0 0 16.93 15.11"
+  class="size-4"
+>
+  <g>
+    <g id="Content">
+      <path
+        class={`transition-all duration-500 group-hover:fill-secondary ${active ? "fill-secondary" : "fill-white"}`}
+        d="M16.91,4.54C16.75,2.12,14.78.16,12.36,0c-1.48-.09-2.82.48-3.77,1.44-.07.07-.18.07-.24,0C7.39.49,6.05-.08,4.57,0,2.15.16.18,2.11.01,4.52c-.11,1.52.48,2.9,1.48,3.86l6.56,6.56c.23.23.6.23.83,0l6.52-6.52c1.01-.96,1.62-2.35,1.52-3.87Z"
+      ></path>
+    </g>
+  </g>
+</svg>
