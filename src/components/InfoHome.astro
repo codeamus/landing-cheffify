@@ -1,50 +1,72 @@
 ---
-import IconCompany from "@/assets/images/icons/icon-company.svg";
-import ImageCover from "@/assets/images/img/image-dinner.webp";
+interface InfoHomeProps {
+  icon: { src: string };
+  title: string;
+  description: string;
+  list: string[];
+  cover: { src: string };
+  isFrozt?: boolean;
+}
+
+import LogoFrozt from "@/assets/images/logos/logo-frozt.svg";
 import { Image } from "astro:assets";
 
-const LIST = [
-  "Soluciones personalizadas de comida congelada.",
-  "Platos elaborados sin conservantes ni colorantes",
-  "Envíos a todo Chile.",
-  "Pedido mínimo mensual de 900.000 CLP.",
-];
+const { icon, title, description, list, cover, isFrozt } =
+  Astro.props as InfoHomeProps;
 ---
 
 <section class="mx-4 lg:mx-40 xl:mx-72 mt-16">
   <article>
-    <Image src={IconCompany} alt="Icono de casa" class="size-20" />
+    <img src={icon.src} alt="Icono de casa" class="size-20" loading="eager" />
     <div class="flex gap-10">
       <div class="flex flex-col lg:w-1/2">
         <h2 class="text-primary text-3xl font-bold mt-2">
-          Servicios para Empresa
+          {title}
         </h2>
         <p class="text-pretty text-primary font-medium text-lg mt-6">
-          Somos proveedores de Restaurantes, Hoteles y Grandes Empresas con
-          platos artesanales congelados y 100% naturales. Solicita una
-          cotización y lleva la mejor calidad a tu negocio.
+          {description}
         </p>
         <h3 class="font-bold text-2xl text-primary mt-8">¿Qué ofrecemos?</h3>
         <ul class="list-disc pl-4">
           {
-            LIST.map((item) => (
+            list.map((item) => (
               <li class="text-primary font-bold mt-4">{item}</li>
             ))
           }
         </ul>
-        <a
-          href="/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="flex items-center gap-2 justify-center px-10 py-4 rounded-lg text-white font-bold transition-all duration-500 hover:bg-secondary bg-cheffify-aqua mt-8 w-full lg:w-fit"
-        >
-          Solicitar COTIZACIÓN
-        </a>
+        {
+          isFrozt ? (
+            <a
+              href="http://"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-2 justify-center px-10 py-4 rounded-lg bg-cheffify-orange text-white font-bold transition-all duration-500 hover:bg-secondary mt-8 w-full lg:w-fit"
+            >
+              Pedir en
+              <Image
+                src={LogoFrozt}
+                alt="Logo Frozt"
+                class="w-20 bottom-1 relative"
+                loading="eager"
+              />
+            </a>
+          ) : (
+            <a
+              href="/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-2 justify-center px-10 py-4 rounded-lg text-white font-bold transition-all duration-500 hover:bg-secondary bg-cheffify-aqua mt-8 w-full lg:w-fit"
+            >
+              Solicitar COTIZACIÓN
+            </a>
+          )
+        }
       </div>
-      <Image
-        src={ImageCover}
-        alt="Imagen de empresa"
+      <img
+        src={cover.src}
+        alt="Imagen de cena con plato de cheffify"
         class="w-full max-w-sm rounded-lg hidden lg:block"
+        loading="eager"
       />
     </div>
   </article>
