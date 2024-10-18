@@ -10,6 +10,7 @@ export default {
         "cheffify-aqua": "#355E74",
         gray: "#7F7F89",
         grayLight: "#E0E0EB",
+        grayUltraLight: "#BCBCC7",
       },
       backgroundImage: {
         "hero-pattern": "url(/hero-pattern.webp)",

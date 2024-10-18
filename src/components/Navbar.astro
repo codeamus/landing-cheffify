@@ -31,7 +31,9 @@ const currentPath = Astro.url.pathname;
 const LOGO_EMPRESA = ["/quienes-somos", "/cotizar", "/nuestros-platos"];
 ---
 
-<nav class="bg-primary px-10 lg:px-40 py-5 flex justify-between items-center">
+<nav
+  class="bg-primary px-10 md:px-20 lg:px-40 xl:px-60 py-5 flex justify-between items-center"
+>
   <a href="/">
     {
       LOGO_EMPRESA.includes(currentPath) ? (
