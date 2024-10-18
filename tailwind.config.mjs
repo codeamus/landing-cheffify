@@ -8,9 +8,11 @@ export default {
         secondary: "#CB6D61",
         "cheffify-orange": "#E27F3E",
         "cheffify-aqua": "#355E74",
+        "cheffify-green": "#1CC447",
         gray: "#7F7F89",
         grayLight: "#E0E0EB",
         grayUltraLight: "#BCBCC7",
+        borderWsp: "#19822F",
       },
       backgroundImage: {
         "hero-pattern": "url(/hero-pattern.webp)",
