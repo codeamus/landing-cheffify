@@ -4,6 +4,8 @@ import InstaIcon from "@/assets/images/icons/icon-inst.svg";
 import MailIcon from "@/assets/images/icons/icon-mail.svg";
 import PhoneIcon from "@/assets/images/icons/icon-phone.svg";
 import WhatsApp from "@/components/icons/WhatsApp.astro";
+import FbIcon from "@/assets/images/icons/icon-fb.svg";
+import LinkedinIcon from "@/assets/images/icons/icon-linkedin.svg";
 import { Image } from "astro:assets";
 import PDFPoliticas from "@/assets/docs/politicas-de-privacidad-cheffify.pdf";
 
@@ -48,8 +50,34 @@ const currentPath = Astro.url.pathname;
             rel="noopener noreferrer"
           >
             <Image
+              src={FbIcon}
+              alt="Icono de facebook"
+              class="size-5 transition-all duration-500 hover:scale-110"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.instagram.com/cheffify_cl/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
               src={InstaIcon}
               alt="Icono de instagram"
+              class="size-5 transition-all duration-500 hover:scale-110"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.instagram.com/cheffify_cl/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src={LinkedinIcon}
+              alt="Icono de linkedin"
               class="size-5 transition-all duration-500 hover:scale-110"
             />
           </a>
