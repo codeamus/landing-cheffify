@@ -3,8 +3,11 @@ import LogoFooter from "@/assets/images/logos/logo-color.svg";
 import InstaIcon from "@/assets/images/icons/icon-inst.svg";
 import MailIcon from "@/assets/images/icons/icon-mail.svg";
 import PhoneIcon from "@/assets/images/icons/icon-phone.svg";
+import WhatsApp from "@/components/icons/WhatsApp.astro";
 import { Image } from "astro:assets";
 import PDFPoliticas from "@/assets/docs/politicas-de-privacidad-cheffify.pdf";
+
+const currentPath = Astro.url.pathname;
 ---
 
 <footer class="flex flex-col px-[20px] lg:px-[60px] xl:px-[170px] py-10">
@@ -16,6 +19,18 @@ import PDFPoliticas from "@/assets/docs/politicas-de-privacidad-cheffify.pdf";
         class="size-24 hover:scale-110 transition-all duration-500"
       />
     </a>
+
+    {
+      currentPath !== "/" && (
+        <a
+          href="tel:+"
+          class="bg-cheffify-green flex items-center gap-2 border border-borderWsp py-2 px-4 rounded-lg text-white text-lg font-bold hover:bg-secondary hover:border-secondary transition-all duration-500"
+        >
+          <WhatsApp />
+          <span>Cotizar por Whatsapp</span>
+        </a>
+      )
+    }
   </div>
   <div
     class="flex flex-col lg:flex-row gap-2 lg:gap-0 items-center justify-between border-t border-b border-t-separator border-grayLight py-10 my-3"
