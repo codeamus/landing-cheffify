@@ -1,5 +1,6 @@
 ---
 import Logo from "@/assets/images/logos/logo.svg";
+import LogoEmpresa from "@/assets/images/logos/logo-cheffify-empresa.svg";
 import { Image } from "astro:assets";
 
 import IconBell from "@/assets/images/icons/icon-bell.svg";
@@ -27,16 +28,28 @@ const MENU_NAV = [
 
 // Obtener la ruta actual
 const currentPath = Astro.url.pathname;
+const LOGO_EMPRESA = ["/quienes-somos", "/cotizar", "/nuestros-platos"];
 ---
 
 <nav class="bg-primary px-10 lg:px-40 py-5 flex justify-between items-center">
   <a href="/">
-    <Image
-      src={Logo}
-      alt="Logo de cheffify"
-      class="size-30 transition-all duration-500 hover:scale-105"
-      loading="eager"
-    />
+    {
+      LOGO_EMPRESA.includes(currentPath) ? (
+        <Image
+          src={LogoEmpresa}
+          alt="Logo de cheffify"
+          class="size-30 transition-all duration-500 hover:scale-105"
+          loading="eager"
+        />
+      ) : (
+        <Image
+          src={Logo}
+          alt="Logo de cheffify"
+          class="size-30 transition-all duration-500 hover:scale-105"
+          loading="eager"
+        />
+      )
+    }
   </a>
   <ul class="flex gap-8 items-center">
     {
