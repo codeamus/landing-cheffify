@@ -1,0 +1,39 @@
+---
+import ImageNosotros from "@/assets/images/img/cheffify-nosotros.webp";
+import { Image } from "astro:assets";
+---
+
+<section
+  class="flex flex-col-reverse xl:flex-row justify-center items-start gap-20 mt-20 px-10 md:px-20 lg:px-40 animate-fade-in-up animate-delay-300 animate-duration-slow"
+>
+  <Image
+    src={ImageNosotros}
+    alt="Imagen dueños de Cheffify"
+    class="w-full"
+    loading="eager"
+  />
+  <div class="flex flex-col">
+    <h1 class="text-4xl text-primary font-extrabold mb-6">
+      Somos <span class="text-secondary">lo que comemos</span>
+    </h1>
+    <p class="text-primary text-lg text-pretty mb-4 font-regular">
+      <strong class="font-bold">¡Pasión y amor!</strong> esa es la base de nuestra
+      cocina. Puede sonar a tópico, pero es exactamente nuestra razón de ser y de
+      sentir. Así nos lo ha enseñado línea a línea, párrafo a párrafo, nuestro cuaderno
+      familiar de recetas, heredado de generación en generación y cuyo legado aún
+      se mantiene vigente y que las hermanas Biancani se han encargado de perpetuar.
+    </p>
+    <p class="text-primary text-lg text-pretty mb-4 font-regular">
+      Esta <strong class="font-bold">“Biblia culinaria”</strong>, escrita por
+      nuestras madres y abuelas, se encarga de mantener la tradición familiar,
+      enseñándonos que en los detalles está la diferencia.
+    </p>
+    <p class="text-primary text-lg text-pretty mb-4 font-regular">
+      Nuestra vasta experiencia entregando un servicio de excelencia en
+      distintos comedores escolares en Chile y tras recibir el reconocimiento de
+      diversas instituciones, nos lleva a expandirnos y compartir nuestro
+      conocimiento culinario ancestral hasta la mesa de tu hogar, tu oficina o
+      allá donde te encuentres.
+    </p>
+  </div>
+</section>
