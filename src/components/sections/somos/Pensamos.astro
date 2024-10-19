@@ -4,10 +4,14 @@ import Food from "@/assets/images/icons/food-shadow.svg";
 import Hearth from "@/assets/images/icons/hearth-shadow.svg";
 import Tomato from "@/assets/images/icons/tomato-shadow.svg";
 import Delivery from "@/assets/images/icons/truck-shadow.svg";
+// Decorative elements
+import ImageFlowerLeft from "@/assets/images/decoratives/elemento-decorativo-flower-transparent.svg";
+import ImageBubblesRight from "@/assets/images/decoratives/elemento-decorativo-bubbles.svg";
+import ImageFlowerRight from "@/assets/images/decoratives/elemento-decorativo-flower-transparent-orange.svg";
 ---
 
 <section
-  class="mt-10 flex flex-col items-center px-10 md:px-20 lg:px-40 animate-fade-in-right animate-delay-500 animate-duration-slow"
+  class="mt-10 flex flex-col items-center px-10 md:px-20 lg:px-40 animate-fade-in-right animate-delay-500 animate-duration-slow relative"
 >
   <h2 class="text-4xl text-primary font-extrabold mb-6 text-center">
     Pensamos por ti. <span class="text-secondary">Resolvemos por ti.</span>
@@ -50,5 +54,25 @@ import Delivery from "@/assets/images/icons/truck-shadow.svg";
   >
     Solicitar COTIZACIÓN
   </a>
+
+  <!-- INFO: Elementos decorativos -->
+  <Image
+    src={ImageFlowerLeft}
+    alt="Elemento decorativo de flor izquierda"
+    class="absolute w-32 top-10 left-0 -z-10 hidden lg:block animate-fade-in-right animate-delay-800 animate-duration-slow"
+    loading="eager"
+  />
+  <Image
+    src={ImageBubblesRight}
+    alt="Elemento decorativo de burbujas derecha"
+    class="absolute w-32 top-10 right-0 -z-10 hidden lg:block animate-fade-in-left animate-delay-800 animate-duration-slow"
+    loading="eager"
+  />
+  <Image
+    src={ImageFlowerRight}
+    alt="Elemento decorativo de flor derecha"
+    class="absolute w-32 top-52 right-0 -z-10 hidden lg:block animate-fade-in-left animate-delay-800 animate-duration-slow"
+    loading="eager"
+  />
 </section>
 <!-- TODO: Agregar ancla de navegacion -->
