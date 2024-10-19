@@ -4,6 +4,10 @@ import IconPeople from "@/assets/images/icons/icon-people.svg";
 import ImageComeComoCasa from "@/assets/images/img/come-como-en-casa.svg";
 import ImageCoverCompany from "@/assets/images/img/image-dinner.webp";
 import ImageCoverFamily from "@/assets/images/img/image-family.webp";
+// Decorativos
+import ImagePoints from "@/assets/images/decoratives/elemento-decorativo-points-green.svg";
+import ImageFlowerRight from "@/assets/images/decoratives/elemento-decorativo-flower-3.svg";
+import ImageFlowerLeft from "@/assets/images/decoratives/elemento-decorativo-flower.svg";
 
 import Footer from "@/components/Footer.astro";
 import HeroBanner from "@/components/HeroBanner.astro";
@@ -23,7 +27,7 @@ import { Image } from "astro:assets";
     <Navbar />
     <HeroBanner />
     <section
-      class="px-4 lg:px-40 xl:px-72 bg-shadow-item bg-no-repeat bg-contain bg-bottom"
+      class="px-4 lg:px-40 xl:px-72 bg-shadow-item bg-no-repeat bg-contain bg-bottom relative"
     >
       <InfoHome
         icon={IconCompany}
@@ -54,6 +58,26 @@ import { Image } from "astro:assets";
         src={ImageComeComoCasa}
         alt="Come como en casa"
         class="w-80 mx-auto py-20"
+        loading="lazy"
+      />
+
+      <!-- INFO: Elementos decorativos -->
+      <Image
+        src={ImagePoints}
+        alt="Elemento decorativo de puntos verdes"
+        class="absolute w-24 top-60 left-0 hidden lg:block"
+        loading="lazy"
+      />
+      <Image
+        src={ImageFlowerRight}
+        alt="Elemento decorativo de flor rosada"
+        class="absolute w-40 top-96 -right-8 -z-10"
+        loading="lazy"
+      />
+      <Image
+        src={ImageFlowerLeft}
+        alt="Elemento decorativo de flor rosada pintada a mano"
+        class="absolute w-40 bottom-40 left-0 -z-10"
         loading="lazy"
       />
     </section>
