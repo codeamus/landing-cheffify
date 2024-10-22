@@ -1,6 +1,7 @@
 ---
 import Footer from "@/components/Footer.astro";
 import Navbar from "@/components/Navbar.astro";
+import Platos from "@/components/products/Platos.astro";
 
 import Layout from "@/layouts/Layout.astro";
 ---
@@ -11,7 +12,9 @@ import Layout from "@/layouts/Layout.astro";
 >
   <main>
     <Navbar />
-    <h1>Platos</h1>
+    <div class="flex mt-10">
+      <Platos />
+    </div>
     <Footer />
   </main>
 </Layout>
