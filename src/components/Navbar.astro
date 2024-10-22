@@ -4,31 +4,16 @@ import LogoEmpresa from "@/assets/images/logos/logo-cheffify-empresa.svg";
 import { Image } from "astro:assets";
 
 import IconBell from "@/assets/images/icons/icon-bell.svg";
-import IconHome from "@/components/icons/Home.astro";
-import IconHearth from "@/components/icons/Hearth.astro";
-import IconStar from "@/components/icons/Star.astro";
-
-const MENU_NAV = [
-  {
-    name: "Inicio",
-    link: "/",
-    Icon: IconHome,
-  },
-  {
-    name: "Nuestros Platos",
-    link: "/nuestros-platos",
-    Icon: IconHearth,
-  },
-  {
-    name: "Quienes somos",
-    link: "/quienes-somos",
-    Icon: IconStar,
-  },
-];
+import { MENU_NAV } from "@/utils/menu";
 
 // Obtener la ruta actual
 const currentPath = Astro.url.pathname;
-const LOGO_EMPRESA = ["/quienes-somos", "/cotizar", "/nuestros-platos"];
+// INFO: Logo empresa visible en las siguientes rutas
+const LOGO_EMPRESA_VISIBLE_INCLUDES = [
+  "/quienes-somos",
+  "/cotizar",
+  "/nuestros-platos",
+];
 ---
 
 <!-- INFO: Refactorizar este componente -->
@@ -39,7 +24,7 @@ const LOGO_EMPRESA = ["/quienes-somos", "/cotizar", "/nuestros-platos"];
     <div class="flex justify-between h-16">
       <a href="/" class="animate-fade-in">
         {
-          LOGO_EMPRESA.includes(currentPath) ? (
+          LOGO_EMPRESA_VISIBLE_INCLUDES.includes(currentPath) ? (
             <Image
               src={LogoEmpresa}
               alt="Logo de cheffify"
