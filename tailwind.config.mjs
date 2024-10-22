@@ -14,6 +14,7 @@ export default {
         grayLight: "#E0E0EB",
         grayUltraLight: "#BCBCC7",
         borderWsp: "#19822F",
+        borderPlatos: "#E7E7EF",
       },
       backgroundImage: {
         "hero-pattern": "url(/hero-pattern.webp)",
