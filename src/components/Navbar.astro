@@ -1,19 +1,11 @@
 ---
-import Logo from "@/assets/images/logos/logo.svg";
-import LogoEmpresa from "@/assets/images/logos/logo-cheffify-empresa.svg";
-import { Image } from "astro:assets";
-
-import IconBell from "@/assets/images/icons/icon-bell.svg";
 import { MENU_NAV } from "@/utils/menu";
+import CotizarButton from "@/components/buttons/CotizarButton.astro";
+import ButtonMenu from "@/components/buttons/ButtonMenu.astro";
+import LogoCheffify from "@/components/common/LogoCheffify.astro";
 
 // Obtener la ruta actual
 const currentPath = Astro.url.pathname;
-// INFO: Logo empresa visible en las siguientes rutas
-const LOGO_EMPRESA_VISIBLE_INCLUDES = [
-  "/quienes-somos",
-  "/cotizar",
-  "/nuestros-platos",
-];
 ---
 
 <!-- INFO: Refactorizar este componente -->
@@ -22,26 +14,7 @@ const LOGO_EMPRESA_VISIBLE_INCLUDES = [
 >
   <div class="px-4 sm:px-6 lg:px-8 w-full">
     <div class="flex justify-between h-16">
-      <a href="/" class="animate-fade-in">
-        {
-          LOGO_EMPRESA_VISIBLE_INCLUDES.includes(currentPath) ? (
-            <Image
-              src={LogoEmpresa}
-              alt="Logo de cheffify"
-              class="size-30 transition-all duration-500 hover:scale-105"
-              loading="eager"
-            />
-          ) : (
-            <Image
-              src={Logo}
-              alt="Logo de cheffify"
-              class="size-30 transition-all duration-500 hover:scale-105"
-              loading="eager"
-            />
-          )
-        }
-      </a>
-
+      <LogoCheffify />
       <div class="flex gap-8 items-center">
         <ul class="hidden md:flex items-center space-x-8">
           {
@@ -59,54 +32,10 @@ const LOGO_EMPRESA_VISIBLE_INCLUDES = [
             ))
           }
         </ul>
-        <a
-          href="/cotizar"
-          class="md:flex items-center justify-center gap-3 bg-secondary px-4 py-2 rounded-2xl transition duration-500 hover:bg-cheffify-aqua h-fit hidden"
-        >
-          <Image
-            src={IconBell}
-            alt="Icono de campana"
-            class="w-4"
-            loading="eager"
-          />
-          <span class="text-white font-semibold text-xs leading-none uppercase"
-            >Cotizar aquí</span
-          >
-        </a>
+        <CotizarButton />
         <!-- Mobile menu button -->
         <div class="md:hidden flex items-center">
-          <button id="menu-btn" class="text-secondary">
-            <!-- Hamburger icon -->
-            <svg
-              id="hamburger-icon"
-              class="h-6 w-6"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-            <!-- X icon -->
-            <svg
-              id="close-icon"
-              class="hidden h-6 w-6"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-          </button>
+          <ButtonMenu />
         </div>
       </div>
     </div>
@@ -128,20 +57,7 @@ const LOGO_EMPRESA_VISIBLE_INCLUDES = [
       ))
     }
     <li class="mt-4">
-      <a
-        href="/cotizar"
-        class="flex items-center justify-center gap-3 bg-secondary px-4 py-2 rounded-2xl transition duration-500 hover:bg-cheffify-aqua h-fit"
-      >
-        <Image
-          src={IconBell}
-          alt="Icono de campana"
-          class="w-4"
-          loading="eager"
-        />
-        <span class="text-white font-semibold text-xs leading-none uppercase"
-          >Cotizar aquí</span
-        >
-      </a>
+      <CotizarButton />
     </li>
   </ul>
 </nav>
