@@ -1,0 +1,14 @@
+---
+import { Image } from "astro:assets";
+import IconBell from "@/assets/images/icons/icon-bell.svg";
+---
+
+<a
+  href="/cotizar"
+  class="md:flex items-center justify-center gap-3 bg-secondary px-4 py-2 rounded-2xl transition duration-500 hover:bg-cheffify-aqua h-fit hidden"
+>
+  <Image src={IconBell} alt="Icono de campana" class="w-4" loading="eager" />
+  <span class="text-white font-semibold text-xs leading-none uppercase"
+    >Cotizar aquí</span
+  >
+</a>
