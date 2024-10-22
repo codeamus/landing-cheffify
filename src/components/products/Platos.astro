@@ -17,13 +17,17 @@ import { Image } from "astro:assets";
     style="grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));"
   >
     {
-      PRODUCTS.map(({ title, description, image }) => (
+      PRODUCTS.map(({ title, description, image, slug }) => (
         <article class="group flex flex-col rounded-[15px] p-3 w-full max-w-[280px] bg-white shadow-cheffify-card">
-          <a href="" aria-label="Link que te lleva al interior del producto">
+          <a
+            href={`/nuestros-platos/${slug}`}
+            aria-label="Link que te lleva al interior del producto"
+          >
             <img
               alt="Plato de albóndigas de carne"
               src={image}
               class="aspect-square rounded-[15px] brightness-75 transition duration-500 group-hover:brightness-100"
+              transition:name="image-product"
             />
           </a>
           <div class="px-2 py-4">
@@ -34,7 +38,7 @@ import { Image } from "astro:assets";
               {description}
             </p>
             <a
-              href="/"
+              href={`/nuestros-platos/${slug}`}
               class="bg-secondary text-center text-white transition-all duration-500 hover:bg-cheffify-aqua rounded-lg w-full py-2 block font-semibold"
             >
               Más información

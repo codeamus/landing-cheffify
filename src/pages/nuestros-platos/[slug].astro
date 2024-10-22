@@ -1,0 +1,56 @@
+---
+import Footer from "@/components/Footer.astro";
+import Navbar from "@/components/Navbar.astro";
+import { PRODUCTS } from "@/config/database.products";
+import Layout from "@/layouts/Layout.astro";
+
+const { slug } = Astro.params;
+const currentProduct = PRODUCTS.find((product) => product.slug === slug);
+if (!currentProduct) return Astro.redirect("/404");
+const { title, descriptionLarge, image, alt, category } = currentProduct;
+---
+
+<Layout
+  title="Comida congelada a domicilio | Platos Congelados Cheffify"
+  description="Platos saludables y deliciosos, preparados y congelados para tu comodidad. ¡Disfruta de comida casera sin el trabajo de cocinar!"
+>
+  <main>
+    <Navbar />
+    <section
+      class="shadow-cheffify-card mx-[20px] lg:mx-[60px] xl:mx-[170px] mt-10 p-6 rounded-xl flex gap-6"
+    >
+      <div>
+        <img
+          src={image}
+          alt={alt}
+          class="rounded-xl"
+          transition:name="image-product"
+        />
+      </div>
+      <div>
+        <div class="flex justify-between mb-4">
+          <a
+            href="/nuestros-platos"
+            class="text-cheffify-gray-ultra-dark bg-cheffify-gray-ultra-light px-4 py-2 rounded-lg transition-all duration-500 hover:bg-secondary hover:text-white"
+            >Volver</a
+          >
+          <a
+            href="/nuestros-platos"
+            class="text-cheffify-gray-ultra-dark bg-cheffify-gray-ultra-light px-4 py-2 rounded-lg transition-all duration-500 hover:bg-secondary hover:text-white"
+            >Info Nutricional</a
+          >
+        </div>
+        <h1 class="text-primary font-bold text-2xl mb-3">
+          {title}
+          <span class="text-secondary font-light text-2xl capitalize"
+            >- {category}</span
+          >
+        </h1>
+        <p class="text-lg text-pretty text-cheffify-gray-light">
+          {descriptionLarge}
+        </p>
+      </div>
+    </section>
+    <Footer />
+  </main>
+</Layout>
