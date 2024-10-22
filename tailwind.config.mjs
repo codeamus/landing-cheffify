@@ -10,6 +10,7 @@ export default {
         "cheffify-orange": "#E27F3E",
         "cheffify-aqua": "#355E74",
         "cheffify-green": "#1CC447",
+        "cheffify-gray-dark": "#646477",
         gray: "#7F7F89",
         grayLight: "#E0E0EB",
         grayUltraLight: "#BCBCC7",
@@ -20,6 +21,9 @@ export default {
         "hero-pattern": "url(/hero-pattern.webp)",
         "shadow-item": "url(/bg-shadow.svg)",
         "banner-cotizar": "url(/banner-cotizar.webp)",
+      },
+      boxShadow: {
+        "cheffify-card": "0px 0px 8px #CB6D6166",
       },
     },
   },
