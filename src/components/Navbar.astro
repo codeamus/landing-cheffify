@@ -37,27 +37,25 @@ const LOGO_EMPRESA = ["/quienes-somos", "/cotizar", "/nuestros-platos"];
 >
   <div class="px-4 sm:px-6 lg:px-8 w-full">
     <div class="flex justify-between h-16">
-      <div class="flex items-center">
-        <a href="/" class="animate-fade-in">
-          {
-            LOGO_EMPRESA.includes(currentPath) ? (
-              <Image
-                src={LogoEmpresa}
-                alt="Logo de cheffify"
-                class="size-30 transition-all duration-500 hover:scale-105"
-                loading="eager"
-              />
-            ) : (
-              <Image
-                src={Logo}
-                alt="Logo de cheffify"
-                class="size-30 transition-all duration-500 hover:scale-105"
-                loading="eager"
-              />
-            )
-          }
-        </a>
-      </div>
+      <a href="/" class="animate-fade-in">
+        {
+          LOGO_EMPRESA.includes(currentPath) ? (
+            <Image
+              src={LogoEmpresa}
+              alt="Logo de cheffify"
+              class="size-30 transition-all duration-500 hover:scale-105"
+              loading="eager"
+            />
+          ) : (
+            <Image
+              src={Logo}
+              alt="Logo de cheffify"
+              class="size-30 transition-all duration-500 hover:scale-105"
+              loading="eager"
+            />
+          )
+        }
+      </a>
 
       <div class="flex gap-8 items-center">
         <ul class="hidden md:flex items-center space-x-8">
@@ -78,7 +76,7 @@ const LOGO_EMPRESA = ["/quienes-somos", "/cotizar", "/nuestros-platos"];
         </ul>
         <a
           href="/cotizar"
-          class="flex items-center justify-center gap-3 bg-secondary px-4 py-2 rounded-2xl transition duration-500 hover:bg-cheffify-aqua h-fit"
+          class="md:flex items-center justify-center gap-3 bg-secondary px-4 py-2 rounded-2xl transition duration-500 hover:bg-cheffify-aqua h-fit hidden"
         >
           <Image
             src={IconBell}
@@ -144,6 +142,22 @@ const LOGO_EMPRESA = ["/quienes-somos", "/cotizar", "/nuestros-platos"];
         </li>
       ))
     }
+    <li class="mt-4">
+      <a
+        href="/cotizar"
+        class="flex items-center justify-center gap-3 bg-secondary px-4 py-2 rounded-2xl transition duration-500 hover:bg-cheffify-aqua h-fit"
+      >
+        <Image
+          src={IconBell}
+          alt="Icono de campana"
+          class="w-4"
+          loading="eager"
+        />
+        <span class="text-white font-semibold text-xs leading-none uppercase"
+          >Cotizar aquí</span
+        >
+      </a>
+    </li>
   </ul>
 </nav>
 
