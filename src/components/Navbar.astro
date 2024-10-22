@@ -31,33 +31,109 @@ const currentPath = Astro.url.pathname;
 const LOGO_EMPRESA = ["/quienes-somos", "/cotizar", "/nuestros-platos"];
 ---
 
+<!-- INFO: Refactorizar este componente -->
 <nav
-  class="bg-primary px-3 md:px-20 lg:px-40 py-5 flex justify-between items-center sticky top-0 z-50 shadow-md"
+  class="bg-primary px-3 md:px-20 lg:px-40 py-5 sticky top-0 z-50 shadow-md w-full"
 >
-  <a href="/" class="animate-fade-in">
-    {
-      LOGO_EMPRESA.includes(currentPath) ? (
-        <Image
-          src={LogoEmpresa}
-          alt="Logo de cheffify"
-          class="size-30 transition-all duration-500 hover:scale-105"
-          loading="eager"
-        />
-      ) : (
-        <Image
-          src={Logo}
-          alt="Logo de cheffify"
-          class="size-30 transition-all duration-500 hover:scale-105"
-          loading="eager"
-        />
-      )
-    }
-  </a>
-  <ul class="flex gap-8 items-center">
+  <div class="px-4 sm:px-6 lg:px-8 w-full">
+    <div class="flex justify-between h-16">
+      <div class="flex items-center">
+        <a href="/" class="animate-fade-in">
+          {
+            LOGO_EMPRESA.includes(currentPath) ? (
+              <Image
+                src={LogoEmpresa}
+                alt="Logo de cheffify"
+                class="size-30 transition-all duration-500 hover:scale-105"
+                loading="eager"
+              />
+            ) : (
+              <Image
+                src={Logo}
+                alt="Logo de cheffify"
+                class="size-30 transition-all duration-500 hover:scale-105"
+                loading="eager"
+              />
+            )
+          }
+        </a>
+      </div>
+
+      <div class="flex gap-8 items-center">
+        <ul class="hidden md:flex items-center space-x-8">
+          {
+            MENU_NAV.map(({ name, link, Icon }) => (
+              <li class="hidden lg:block">
+                <a href={link} class="flex justify-end items-end gap-2 group">
+                  <Icon active={currentPath === link} />
+                  <span
+                    class={`${currentPath === link ? "text-secondary" : "text-white"} font-semibold text-sm leading-none transition-all duration-500 group-hover:text-secondary`}
+                  >
+                    {name}
+                  </span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+        <a
+          href="/cotizar"
+          class="flex items-center justify-center gap-3 bg-secondary px-4 py-2 rounded-2xl transition duration-500 hover:bg-cheffify-aqua h-fit"
+        >
+          <Image
+            src={IconBell}
+            alt="Icono de campana"
+            class="w-4"
+            loading="eager"
+          />
+          <span class="text-white font-semibold text-xs leading-none uppercase"
+            >Cotizar aquí</span
+          >
+        </a>
+        <!-- Mobile menu button -->
+        <div class="md:hidden flex items-center">
+          <button id="menu-btn" class="text-secondary">
+            <!-- Hamburger icon -->
+            <svg
+              id="hamburger-icon"
+              class="h-6 w-6"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <!-- X icon -->
+            <svg
+              id="close-icon"
+              class="hidden h-6 w-6"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Mobile menu -->
+  <ul id="mobile-menu" class="hidden md:hidden w-full">
     {
       MENU_NAV.map(({ name, link, Icon }) => (
-        <li class="hidden lg:block">
-          <a href={link} class="flex justify-end items-end gap-2 group">
+        <li class="mt-4">
+          <a href={link} class="flex justify-start items-end gap-10 group">
             <Icon active={currentPath === link} />
             <span
               class={`${currentPath === link ? "text-secondary" : "text-white"} font-semibold text-sm leading-none transition-all duration-500 group-hover:text-secondary`}
@@ -68,21 +144,28 @@ const LOGO_EMPRESA = ["/quienes-somos", "/cotizar", "/nuestros-platos"];
         </li>
       ))
     }
-    <li>
-      <a
-        href="/cotizar"
-        class="flex items-center justify-center gap-3 bg-secondary px-4 py-2 rounded-2xl transition duration-500 hover:bg-cheffify-aqua"
-      >
-        <Image
-          src={IconBell}
-          alt="Icono de campana"
-          class="size-4"
-          loading="eager"
-        />
-        <span class="text-white font-semibold text-xs leading-none uppercase"
-          >Cotizar aquí</span
-        >
-      </a>
-    </li>
   </ul>
 </nav>
+
+<script>
+  const menuBtn = document.getElementById(
+    "menu-btn"
+  ) as HTMLButtonElement | null;
+  const mobileMenu = document.getElementById(
+    "mobile-menu"
+  ) as HTMLElement | null;
+  const hamburgerIcon = document.getElementById(
+    "hamburger-icon"
+  ) as SVGElement | null;
+  const closeIcon = document.getElementById("close-icon") as SVGElement | null;
+
+  if (menuBtn && mobileMenu && hamburgerIcon && closeIcon) {
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+      hamburgerIcon.classList.toggle("hidden");
+      closeIcon.classList.toggle("hidden");
+    });
+  } else {
+    console.error("One or more elements not found in the DOM");
+  }
+</script>
