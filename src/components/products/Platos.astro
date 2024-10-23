@@ -17,17 +17,19 @@ import { Image } from "astro:assets";
     style="grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));"
   >
     {
-      PRODUCTS.map(({ title, description, image, slug }) => (
-        <article class="group flex flex-col rounded-lg p-3 w-full max-w-[280px] bg-white shadow-cheffify-card">
+      PRODUCTS.map(({ title, description, image, slug, category }) => (
+        <article
+          class="group flex flex-col rounded-lg p-3 w-full max-w-[280px] bg-white shadow-cheffify-card product-item"
+          data-category={category}
+        >
           <a
             href={`/nuestros-platos/${slug}`}
             aria-label="Link que te lleva al interior del producto"
           >
             <img
-              alt="Plato de albóndigas de carne"
+              alt={title}
               src={image}
               class="aspect-square rounded-lg brightness-75 transition duration-500 group-hover:brightness-100"
-              transition:name="productImage"
             />
           </a>
           <div class="px-2 py-4">

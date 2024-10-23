@@ -37,22 +37,41 @@ import IconCheck from "@/assets/images/icons/icon-check.svg";
 </section>
 
 <script is:inline>
-  // Obtener todos los botones de categorías
-  const categoryButtons = document.querySelectorAll(".category-button");
+  document.addEventListener("DOMContentLoaded", function () {
+    const categoryButtons = document.querySelectorAll(".category-button");
+    const products = document.querySelectorAll(".product-item");
 
-  categoryButtons.forEach((button) => {
-    button.addEventListener("click", function () {
-      // Obtener el <li> padre del botón
-      const categoryItem = this.closest(".category-item");
+    categoryButtons.forEach((button) => {
+      button.addEventListener("click", function () {
+        // Obtener el slug de la categoría seleccionada
+        const categoryItem = this.closest(".category-item");
+        const categorySlug = categoryItem.getAttribute("data-slug");
 
-      // Limpiar todas las categorías activas
-      document.querySelectorAll(".category-item").forEach((item) => {
-        item.querySelector(".check-icon").style.display = "none"; // Ocultar todos los iconos de check
+        // Limpiar categorías activas y ocultar iconos de check
+        document.querySelectorAll(".category-item").forEach((item) => {
+          item.querySelector(".check-icon").style.display = "none";
+        });
+
+        // Mostrar el check solo en la categoría activa
+        const checkIcon = categoryItem.querySelector(".check-icon");
+        checkIcon.style.display = "inline";
+
+        // Filtrar productos según la categoría seleccionada
+        products.forEach((product) => {
+          const productCategory = product.getAttribute("data-category");
+          console.log(productCategory, categorySlug);
+          if (productCategory == categorySlug) {
+            product.style.display = "block"; // Mostrar el producto
+          } else {
+            product.style.display = "none"; // Ocultar el producto
+          }
+        });
       });
+    });
 
-      // Mostrar el check solo en la categoría activa
-      const checkIcon = categoryItem.querySelector(".check-icon");
-      checkIcon.style.display = "inline"; // Mostrar el icono de check
+    // Mostrar todos los productos al cargar la página
+    products.forEach((product) => {
+      product.style.display = "block";
     });
   });
 </script>
