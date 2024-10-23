@@ -1,0 +1,58 @@
+---
+import IconFilter from "@/assets/images/icons/icon-filter.svg";
+import { CATEGORIES } from "@/config/database.products";
+import { Image } from "astro:assets";
+import IconCheck from "@/assets/images/icons/icon-check.svg";
+---
+
+<section class="w-1/3">
+  <div class="border-b border-borderPlatos w-full pb-5 flex gap-4">
+    <Image src={IconFilter} alt="Icono de filtro" class="w-5" />
+    <h2 class="font-semibold text-primary text-lg">Filtrar</h2>
+  </div>
+  <div class="border-b border-borderPlatos w-full mt-10">
+    <h2 class="font-bold text-primary text-sm uppercase pb-2">Categorías</h2>
+  </div>
+  <ul class="mt-4" id="category-list">
+    {
+      CATEGORIES.map(({ name, slug, icon }) => (
+        <li
+          class="text-secondary text-sm md:text-lg flex justify-between relative group mb-2 category-item"
+          data-slug={slug}
+        >
+          <button class="flex items-center gap-3 category-button">
+            <Image src={icon} alt="" class="w-5 h-5" />
+            <span class="text-[14px] md:text-[16px]">{name}</span>
+          </button>
+          <Image
+            src={IconCheck}
+            alt="Active Icon"
+            class="w-5 h-5 check-icon"
+            style="display: none;"
+          />
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<script is:inline>
+  // Obtener todos los botones de categorías
+  const categoryButtons = document.querySelectorAll(".category-button");
+
+  categoryButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      // Obtener el <li> padre del botón
+      const categoryItem = this.closest(".category-item");
+
+      // Limpiar todas las categorías activas
+      document.querySelectorAll(".category-item").forEach((item) => {
+        item.querySelector(".check-icon").style.display = "none"; // Ocultar todos los iconos de check
+      });
+
+      // Mostrar el check solo en la categoría activa
+      const checkIcon = categoryItem.querySelector(".check-icon");
+      checkIcon.style.display = "inline"; // Mostrar el icono de check
+    });
+  });
+</script>

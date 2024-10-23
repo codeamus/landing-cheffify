@@ -1,6 +1,7 @@
 ---
 import Footer from "@/components/Footer.astro";
 import Navbar from "@/components/Navbar.astro";
+import Filter from "@/components/products/Filter.astro";
 import Platos from "@/components/products/Platos.astro";
 
 import Layout from "@/layouts/Layout.astro";
@@ -13,8 +14,9 @@ import Layout from "@/layouts/Layout.astro";
   <main>
     <Navbar />
     <div
-      class="flex mt-10 animate-fade-in-up animate-delay-300 animate-duration-slow"
+      class="flex mt-10 animate-fade-in-up animate-delay-300 animate-duration-slow px-[20px] lg:px-[60px] xl:px-[170px] gap-20"
     >
+      <Filter />
       <Platos />
     </div>
     <Footer />

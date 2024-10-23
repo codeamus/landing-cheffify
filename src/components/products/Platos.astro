@@ -4,7 +4,7 @@ import { PRODUCTS } from "@/config/database.products";
 import { Image } from "astro:assets";
 ---
 
-<section class="px-[20px] lg:px-[60px] xl:px-[170px] w-full">
+<section class="w-full">
   <div class="flex items-center gap-4 border-b border-borderPlatos w-full pb-5">
     <Image src={IconCarta} alt="Icono de carta" class="w-5" />
     <h1 class="font-semibold text-primary text-lg">
@@ -13,12 +13,12 @@ import { Image } from "astro:assets";
   </div>
 
   <div
-    class="grid mt-10 gap-6 z-10 w-full"
-    style="grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));"
+    class="grid mt-10 gap-3 z-10 w-full"
+    style="grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));"
   >
     {
       PRODUCTS.map(({ title, description, image, slug }) => (
-        <article class="group flex flex-col rounded-[15px] p-3 w-full max-w-[280px] bg-white shadow-cheffify-card">
+        <article class="group flex flex-col rounded-lg p-3 w-full max-w-[280px] bg-white shadow-cheffify-card">
           <a
             href={`/nuestros-platos/${slug}`}
             aria-label="Link que te lleva al interior del producto"
@@ -26,7 +26,7 @@ import { Image } from "astro:assets";
             <img
               alt="Plato de albóndigas de carne"
               src={image}
-              class="aspect-square rounded-[15px] brightness-75 transition duration-500 group-hover:brightness-100"
+              class="aspect-square rounded-lg brightness-75 transition duration-500 group-hover:brightness-100"
               transition:name="productImage"
             />
           </a>
