@@ -33,7 +33,8 @@ export const PRODUCTS = [
     id: 3,
     slug: "albondigas-de-carne",
     title: "Albóndigas de carne",
-    description: "Receta familiar jugosa",
+    description:
+      "Albóndigas de carne sazonada, cocidas a la perfección y servidas en una deliciosa salsa de tomate casera, que equilibra el sabor agridulce y resalta la suavidad de las albóndigas.",
     descriptionLarge:
       "Las Albóndigas de Carne con Salsa de Tomate presentan pequeñas y jugosas esferas de carne sazonada, cocidas a la perfección. Se sirven nadando en una irresistible salsa de tomate casera, que aporta un equilibrado sabor agridulce y realza la textura suave de las albóndigas. Esta combinación clásica es un placer reconfortante para el paladar, ofreciendo un festín de sabores reconociendo y satisfaciendo a partes iguales.",
     metaDescription:
