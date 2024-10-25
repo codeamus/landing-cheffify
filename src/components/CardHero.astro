@@ -6,9 +6,10 @@ interface CardHeroProps {
   bgButton: string;
   typeFrozt: boolean;
   link: string;
+  hoverBgButton: string;
 }
 
-const { title, btnText, legalText, bgButton, typeFrozt, link } =
+const { title, btnText, legalText, bgButton, typeFrozt, link, hoverBgButton } =
   Astro.props as CardHeroProps;
 
 import LogoFrozt from "@/assets/images/logos/logo-frozt.svg";
@@ -17,6 +18,8 @@ import { Image } from "astro:assets";
 const bgButtonClasses: { [key: string]: string } = {
   "cheffify-aqua": "bg-cheffify-aqua",
   "cheffify-orange": "bg-cheffify-orange",
+  "cheffify-aqua-light": "hover:bg-cheffify-aqua-light",
+  "cheffify-orange-light": "hover:bg-cheffify-orange-light",
 };
 ---
 
@@ -24,11 +27,10 @@ const bgButtonClasses: { [key: string]: string } = {
   class="bg-[#ffffffd9] flex flex-col justify-center items-center py-7 px-5 rounded-xl shadow-lg w-full"
 >
   <h2 class="text-primary font-bold text-2xl mb-5">{title}</h2>
-  <!-- TODO: Add link COTIZACIOn -->
   <a
     href={link}
     target={typeFrozt ? "_blank" : "_self"}
-    class={`flex items-center gap-2 justify-center px-10 py-4 rounded-lg ${bgButtonClasses[bgButton] || ""} text-white font-bold transition-all duration-500 hover:bg-secondary`}
+    class={`flex items-center gap-2 justify-center px-10 py-4 rounded-lg ${bgButtonClasses[bgButton] || ""} text-white font-bold transition-all duration-500 ${bgButtonClasses[hoverBgButton] || ""}`}
   >
     {btnText}
 
@@ -43,7 +45,6 @@ const bgButtonClasses: { [key: string]: string } = {
       )
     }
   </a>
-  <!-- TODO: Add legal text -->
   <span class="text-xs text-primary mt-2">
     {typeFrozt && <strong>*FROZT.cl</strong>}
     {legalText}

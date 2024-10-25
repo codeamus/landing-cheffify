@@ -9,6 +9,8 @@ export default {
         secondary: "#CB6D61",
         "cheffify-orange": "#E27F3E",
         "cheffify-aqua": "#355E74",
+        "cheffify-aqua-light": "#8096a5",
+        "cheffify-orange-light": "#ffbe80",
         "cheffify-green": "#1CC447",
         "cheffify-gray-dark": "#646477",
         "cheffify-gray-light": "#C2C2CE",
