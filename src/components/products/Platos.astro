@@ -23,13 +23,14 @@ import { Image } from "astro:assets";
           data-category={category}
         >
           <a
+            class="overflow-hidden rounded-lg flex"
             href={`/nuestros-platos/${slug}`}
             aria-label="Link que te lleva al interior del producto"
           >
             <img
               alt={title}
               src={image}
-              class="aspect-square rounded-lg brightness-75 transition duration-500 group-hover:brightness-100"
+              class="aspect-square rounded-lg transition duration-500 transform group-hover:scale-110"
             />
           </a>
           <div class="px-2 py-4">
