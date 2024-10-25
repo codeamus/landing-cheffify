@@ -27,6 +27,7 @@ const bgButtonClasses: { [key: string]: string } = {
   <!-- TODO: Add link COTIZACIOn -->
   <a
     href={link}
+    target={typeFrozt ? "_blank" : "_self"}
     class={`flex items-center gap-2 justify-center px-10 py-4 rounded-lg ${bgButtonClasses[bgButton] || ""} text-white font-bold transition-all duration-500 hover:bg-secondary`}
   >
     {btnText}

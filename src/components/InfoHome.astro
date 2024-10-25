@@ -37,7 +37,7 @@ const { icon, title, description, list, cover, isFrozt } =
         {
           isFrozt ? (
             <a
-              href="https://frozt.cl/"
+              href={import.meta.env.PUBLIC_FROZT_URL}
               target="_blank"
               rel="noopener noreferrer"
               class="flex items-center gap-2 justify-center px-10 py-4 rounded-lg bg-cheffify-orange text-white font-bold transition-all duration-500 hover:bg-secondary mt-8 w-full lg:w-fit"
