@@ -6,12 +6,13 @@ interface InfoHomeProps {
   list: string[];
   cover: { src: string };
   isFrozt?: boolean;
+  altImage?: string;
 }
 
 import LogoFrozt from "@/assets/images/logos/logo-frozt.svg";
 import { Image } from "astro:assets";
 
-const { icon, title, description, list, cover, isFrozt } =
+const { icon, title, description, list, cover, isFrozt, altImage } =
   Astro.props as InfoHomeProps;
 ---
 
@@ -62,7 +63,7 @@ const { icon, title, description, list, cover, isFrozt } =
       </div>
       <img
         src={cover.src}
-        alt="Imagen de cena con plato de cheffify"
+        alt={altImage}
         class="w-full max-w-sm rounded-lg hidden lg:block"
         loading={isFrozt ? "lazy" : "eager"}
       />
