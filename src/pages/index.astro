@@ -20,8 +20,8 @@ import { Image } from "astro:assets";
 ---
 
 <Layout
-  title="Comida congelada a domicilio | Platos Congelados Cheffify"
-  description="Platos saludables y deliciosos, preparados y congelados para tu comodidad. ¡Disfruta de comida casera sin el trabajo de cocinar!"
+  title="Servicio de alimentación para empresas | Cheﬃfy"
+  description="Cheﬃfy ofrece servicios de alimentación para empresas con menús personalizados, frescos y saludables. Mejora la experiencia de tu equipo con opciones de calidad."
 >
   <main>
     <Navbar />
@@ -31,7 +31,7 @@ import { Image } from "astro:assets";
     >
       <InfoHome
         icon={IconCompany}
-        title="Servicios para Empresa"
+        title="Servicio de almuerzos y colaciones para empresas"
         description="Somos proveedores de Restaurantes, Hoteles y Grandes Empresas con platos artesanales congelados y 100% naturales. Solicita una cotización y lleva la mejor calidad a tu negocio."
         list={[
           "Soluciones personalizadas de comida congelada.",
@@ -40,10 +40,11 @@ import { Image } from "astro:assets";
           "Pedido mínimo mensual de 900.000 CLP.",
         ]}
         cover={ImageCoverCompany}
+        altImage="Servicio de almuerzos y colaciones para empresas"
       />
       <InfoHome
         icon={IconPeople}
-        title="Para particulares"
+        title="Comida a domicilio"
         description="Disfruta de nuestra comida casera y saludable de siempre en la comodidad de tu hogar. Elige tu menú favorito con FROZT y llegará directo a tu casa ¡haz tu pedido ahora!"
         list={[
           "Platos caseros congelados, listos para disfrutar.",
@@ -53,6 +54,7 @@ import { Image } from "astro:assets";
         ]}
         cover={ImageCoverFamily}
         isFrozt={true}
+        altImage="Comida a domicilio"
       />
       <Image
         src={ImageComeComoCasa}
