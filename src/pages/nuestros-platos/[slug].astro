@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar.astro";
 import { PRODUCTS } from "@/config/database.products";
 import Layout from "@/layouts/Layout.astro";
 
+import PDF from "@/assets/docs/informacion_nutricional.pdf";
+
 const { slug } = Astro.params;
 const currentProduct = PRODUCTS.find((product) => product.slug === slug);
 if (!currentProduct) return Astro.redirect("/404");
@@ -35,7 +37,8 @@ const { title, descriptionLarge, image, alt, category } = currentProduct;
             >Volver</a
           >
           <a
-            href="/nuestros-platos"
+            href={PDF}
+            target="_blank"
             class="text-cheffify-gray-ultra-dark bg-cheffify-gray-ultra-light px-4 py-2 rounded-lg transition-all duration-500 hover:bg-secondary hover:text-white"
             >Info Nutricional</a
           >
