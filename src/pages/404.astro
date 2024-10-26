@@ -2,6 +2,10 @@
 import Footer from "@/components/Footer.astro";
 import Navbar from "@/components/Navbar.astro";
 import Layout from "@/layouts/Layout.astro";
+
+import ImageLeft from "@/assets/images/decoratives/404-left.svg";
+import ImageRight from "@/assets/images/decoratives/404-right.svg";
+import { Image } from "astro:assets";
 ---
 
 <Layout
@@ -14,13 +18,34 @@ import Layout from "@/layouts/Layout.astro";
       class="px-[20px] lg:px-[60px] xl:px-[170px] py-10 flex items-center justify-center"
     >
       <div
-        class="shadow-cheffify-card flex flex-col items-center justify-center py-20 w-full max-w-4xl rounded-xl"
+        class="shadow-cheffify-card flex items-center justify-center lg:justify-between py-20 w-full max-w-4xl rounded-xl"
       >
-        <h1 class="font-bold text-primary text-7xl">404</h1>
-        <h2 class="uppercase text-secondary font-bold text-2xl">¡OPS!</h2>
-        <p class="text-primary font-light text-lg">
-          Lo sentimos, esta página no está disponible.
-        </p>
+        <Image
+          src={ImageLeft}
+          alt="Decorativa imagen izquierda 404"
+          class="hidden lg:block"
+        />
+        <div>
+          <h1 class="font-bold text-primary text-7xl text-center mb-3">404</h1>
+          <h2
+            class="uppercase text-secondary font-bold text-2xl text-center mb-3"
+          >
+            ¡OPS!
+          </h2>
+          <p class="text-primary font-light text-lg text-center">
+            Lo sentimos, esta página no está disponible.
+          </p>
+          <a
+            href="/"
+            class="bg-secondary px-10 py-2 rounded-2xl transition duration-500 hover:bg-cheffify-aqua text-white mx-auto block mt-5 w-fit"
+            >Volver</a
+          >
+        </div>
+        <Image
+          src={ImageRight}
+          alt="Decorativa imagen derecha 404"
+          class="hidden lg:block"
+        />
       </div>
     </section>
     <Footer />
