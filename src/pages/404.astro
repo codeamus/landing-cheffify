@@ -1,0 +1,28 @@
+---
+import Footer from "@/components/Footer.astro";
+import Navbar from "@/components/Navbar.astro";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout
+  title="Servicio de alimentación para empresas | Cheﬃfy"
+  description="Cheﬃfy ofrece servicios de alimentación para empresas con menús personalizados, frescos y saludables. Mejora la experiencia de tu equipo con opciones de calidad."
+>
+  <main>
+    <Navbar />
+    <section
+      class="px-[20px] lg:px-[60px] xl:px-[170px] py-10 flex items-center justify-center"
+    >
+      <div
+        class="shadow-cheffify-card flex flex-col items-center justify-center py-20 w-full max-w-4xl rounded-xl"
+      >
+        <h1 class="font-bold text-primary text-7xl">404</h1>
+        <h2 class="uppercase text-secondary font-bold text-2xl">¡OPS!</h2>
+        <p class="text-primary font-light text-lg">
+          Lo sentimos, esta página no está disponible.
+        </p>
+      </div>
+    </section>
+    <Footer />
+  </main>
+</Layout>
