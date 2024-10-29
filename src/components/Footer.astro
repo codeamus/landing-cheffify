@@ -9,6 +9,9 @@ import LinkedinIcon from "@/assets/images/icons/icon-linkedin.svg";
 import { Image } from "astro:assets";
 import PDFPoliticas from "@/assets/docs/politicas-de-privacidad-cheffify.pdf";
 
+const LINK_WHATSAPP =
+  "https://api.whatsapp.com/send?phone=56944732293&text=%C2%A1Hola,%20les%20escribo%20desde%20su%20sitio%20web%20cheffify.cl!%20Quisiera%20solicitar%20m%C3%A1s%20informaci%C3%B3n%20acerca%20sus%20platos%20congelados!%20%E2%9D%84%EF%B8%8F%F0%9F%8D%9D%F0%9F%8D%97";
+
 const currentPath = Astro.url.pathname;
 ---
 
@@ -25,7 +28,8 @@ const currentPath = Astro.url.pathname;
     {
       currentPath !== "/" && (
         <a
-          href="tel:+"
+          target="_blank"
+          href={LINK_WHATSAPP}
           class="bg-cheffify-green flex items-center gap-2 border border-borderWsp py-2 px-4 rounded-lg text-white text-lg font-bold hover:bg-secondary hover:border-secondary transition-all duration-500"
         >
           <WhatsApp />
