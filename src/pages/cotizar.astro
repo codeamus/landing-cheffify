@@ -27,16 +27,21 @@ import Layout from "@/layouts/Layout.astro";
       </p>
     </section>
     <section class="flex w-full items-center justify-center mt-10">
+      <script is:inline>
+        function initializeHubSpotForm() {
+          if (window.hbspt) {
+            window.hbspt.forms.create({
+              portalId: "46882254",
+              formId: "28795d8e-f41b-43a0-a513-3c7a2e82be21",
+            });
+          }
+        }
+      </script>
       <script
         charset="utf-8"
         type="text/javascript"
-        src="//js.hsforms.net/forms/embed/v2.js"></script>
-      <script>
-        hbspt.forms.create({
-          portalId: "46882254",
-          formId: "28795d8e-f41b-43a0-a513-3c7a2e82be21",
-        });
-      </script>
+        src="//js.hsforms.net/forms/embed/v2.js"
+        onload="initializeHubSpotForm()"></script>
     </section>
     <Footer />
   </main>
