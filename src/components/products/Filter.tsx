@@ -6,6 +6,23 @@ import { useState } from "preact/hooks";
 const Filter = () => {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
+  const handleCategoryClick = (slug: string) => {
+    setActiveCategory(slug);
+    filterProducts(slug);
+  };
+
+  const filterProducts = (slug: string) => {
+    const products = document.querySelectorAll<HTMLElement>(".product-item"); // Asignamos HTMLElement
+    products.forEach((product) => {
+      const productCategory = product.getAttribute("data-category");
+      if (productCategory === slug) {
+        product.style.display = "block"; // Mostrar el producto
+      } else {
+        product.style.display = "none"; // Ocultar el producto
+      }
+    });
+  };
+
   return (
     <section className="lg:w-1/3">
       <div className="border-b border-borderPlatos w-full pb-5 flex gap-4">
@@ -26,7 +43,7 @@ const Filter = () => {
           >
             <button
               className="flex items-center gap-3 category-button"
-              onClick={() => setActiveCategory(slug)}
+              onClick={() => handleCategoryClick(slug)}
             >
               <img src={icon.src} alt="" className="w-5 h-5" />
               <span className="text-[14px] md:text-[16px]">{name}</span>

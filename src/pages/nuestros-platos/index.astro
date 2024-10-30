@@ -6,7 +6,7 @@ import Platos from "@/components/products/Platos.astro";
 import Layout from "@/layouts/Layout.astro";
 
 import ImagePoints from "@/assets/images/decoratives/elemento-decorativo-points-orange.svg";
-import FlowerRight from "@/assets/images/decoratives/elemento-decorativo-flower-2.svg";
+import FlowerLeft from "@/assets/images/decoratives/elemento-decorativo-flower-3.svg";
 import { Image } from "astro:assets";
 ---
 
@@ -29,9 +29,9 @@ import { Image } from "astro:assets";
         class="hidden lg:block absolute top-80 left-0"
       />
       <Image
-        alt="Elemento decorativo de flor izquierda"
-        src={FlowerRight}
-        class="hidden lg:block absolute bottom-40 left-0"
+        alt="Elemento decorativo de flor derecha"
+        src={FlowerLeft}
+        class="hidden lg:block absolute top-80 -right-10 -z-10"
       />
     </div>
     <Footer />
