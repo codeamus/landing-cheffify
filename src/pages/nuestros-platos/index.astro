@@ -1,7 +1,7 @@
 ---
 import Footer from "@/components/Footer.astro";
 import Navbar from "@/components/Navbar.astro";
-import Filter from "@/components/products/Filter.astro";
+import Filter from "@/components/products/Filter";
 import Platos from "@/components/products/Platos.astro";
 import Layout from "@/layouts/Layout.astro";
 
@@ -19,7 +19,7 @@ import { Image } from "astro:assets";
     <div
       class="overflow-x-hidden relative flex flex-col lg:flex-row mt-10 animate-fade-in-up animate-delay-300 animate-duration-slow px-[20px] lg:px-[60px] xl:px-[170px] gap-20"
     >
-      <Filter />
+      <Filter client:load />
       <Platos />
 
       <!-- Elementos decorativos -->
