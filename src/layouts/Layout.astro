@@ -22,12 +22,12 @@ import { ViewTransitions } from "astro:transitions";
     <title>{title}</title>
     <ViewTransitions />
 
+    <!-- Google Tag Manager -->
     <script is:inline>
-      // Google Tag Manager
       (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        const f = d.getElementsByTagName(s)[0],
+        var f = d.getElementsByTagName(s)[0],
           j = d.createElement(s),
           dl = l != "dataLayer" ? "&l=" + l : "";
         j.async = true;
@@ -36,8 +36,21 @@ import { ViewTransitions } from "astro:transitions";
       })(window, document, "script", "dataLayer", "GTM-T3JPKQB");
     </script>
 
+    <!-- Google Ads Global Site Tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-11208423270"></script>
     <script is:inline>
-      // Clarity Script
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "AW-11208423270");
+    </script>
+
+    <!-- Clarity Script -->
+    <script is:inline>
       (function (c, l, a, r, i, t, y) {
         c[a] =
           c[a] ||
@@ -52,8 +65,8 @@ import { ViewTransitions } from "astro:transitions";
       })(window, document, "clarity", "script", "hge3jxbsam");
     </script>
 
+    <!-- Google Ads Conversion Event -->
     <script is:inline>
-      // Google Ads Conversion
       gtag("event", "conversion", {
         send_to: "AW-11208423270/ieTCCM2Kx6kYEObuy-Ap",
       });
