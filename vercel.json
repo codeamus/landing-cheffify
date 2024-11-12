@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "https://cheffify.cl/:path*",
+      "destination": "https://www.cheffify.cl/:path*",
+      "permanent": true
+    }
+  ]
+}
