@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/shop/arroz-blanco",
+      "destination": "https://frozt.cl/collections/cheffify?page=1",
+      "permanent": true
+    }
+  ]
+}
