@@ -1,8 +1,28 @@
 {
   "redirects": [
     {
-      "source": "/shop/arroz-blanco",
+      "source": "/shop",
       "destination": "https://frozt.cl/collections/cheffify?page=1",
+      "permanent": true
+    },
+    {
+      "source": "/congelados",
+      "destination": "/nuestros-platos",
+      "permanent": true
+    },
+    {
+      "source": "/login",
+      "destination": "/cotizar",
+      "permanent": true
+    },
+    {
+      "source": "/crear-cuenta",
+      "destination": "/cotizar",
+      "permanent": true
+    },
+    {
+      "source": "/static",
+      "destination": "/nuestros-platos",
       "permanent": true
     }
   ]
