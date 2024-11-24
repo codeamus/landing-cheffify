@@ -1,7 +1,7 @@
 {
   "redirects": [
     {
-      "source": "/shop",
+      "source": "/shop/:path*",
       "destination": "https://frozt.cl/collections/cheffify?page=1",
       "permanent": true
     },
@@ -21,7 +21,7 @@
       "permanent": true
     },
     {
-      "source": "/static",
+      "source": "/static/:path*",
       "destination": "/nuestros-platos",
       "permanent": true
     }
