@@ -1,34 +1,8 @@
 {
   "redirects": [
     {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "cheffify.cl" }],
-      "destination": "https://www.cheffify.cl/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/shop/:path*",
+      "source": "/(.*)",
       "destination": "https://frozt.cl/collections/cheffify?page=1",
-      "permanent": true
-    },
-    {
-      "source": "/congelados",
-      "destination": "/nuestros-platos",
-      "permanent": true
-    },
-    {
-      "source": "/login",
-      "destination": "/cotizar",
-      "permanent": true
-    },
-    {
-      "source": "/crear-cuenta",
-      "destination": "/cotizar",
-      "permanent": true
-    },
-    {
-      "source": "/static/:path*",
-      "destination": "/nuestros-platos",
       "permanent": true
     }
   ]
